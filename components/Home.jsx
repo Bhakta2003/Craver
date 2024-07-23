@@ -8,8 +8,10 @@ import TopCategory from './TopCategory';
 import DishesCategory from './DishesCategory';
 import BestSellerCards from './BestSellerCards';
 import { BestSellerInfo } from './BestSellerInfo';
-import ProfileSettings from './ProfileSettings';
-import ProfileScreen from './ProfileScreen';
+// import ProfileSettings from './ProfileSettings';
+// import ProfileScreen from './ProfileScreen';
+
+
 
 const Home = ({navigation}) => {
     return (
@@ -32,7 +34,7 @@ const Home = ({navigation}) => {
             <ImgSlid/>
             <TopCategory/>
             <Text style={{textAlign:'center',marginTop:15,letterSpacing:6,marginBottom:5,color:'gray'}}>EXPLORE</Text>
-            <DishesCategory/>
+            <DishesCategory navigation={navigation}/>
             <Text style={{textAlign:'center',marginTop:7,letterSpacing:6,marginBottom:13,color:'gray'}}>OUR BESTSELLERS</Text>
             {BestSellerInfo.map(item => (
                 <BestSellerCards key={item.id} item={item} />
