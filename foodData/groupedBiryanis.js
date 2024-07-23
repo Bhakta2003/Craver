@@ -1,7 +1,7 @@
 export const groupedBiryanis =  {
   "Veg Biryanis": [
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/paneer.jpeg'),
       popular: 'Popular in Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Paneer Biryani',
@@ -10,7 +10,7 @@ export const groupedBiryanis =  {
       size: 'Regular'
     },
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/hyderajpeg.jpeg'),
       popular: 'Popular in Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Veg Hyderabadi Biryani',
@@ -19,7 +19,7 @@ export const groupedBiryanis =  {
       size: 'Large'
     },
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/mushroom.jpeg'),
       popular: 'Popular in Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Mushroom Biryani',
@@ -28,16 +28,7 @@ export const groupedBiryanis =  {
       size: 'Regular'
     },
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
-      popular: 'Popular in Veg Biryani',
-      bestseller: 'BESTSELLER',
-      title: 'Veg Dum Biryani',
-      description: 'Slow-cooked basmati rice with fresh vegetables and traditional spices',
-      price: '₹260',
-      size: 'Regular'
-    },
-    {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/paneer.jpeg'),
       popular: 'Popular in Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Kashmiri Biryani',
@@ -48,7 +39,7 @@ export const groupedBiryanis =  {
   ],
   "Non-Veg Biryanis": [
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/chickenjpeg.jpeg'),
       popular: 'Popular in Non-Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Chicken Biryani',
@@ -57,7 +48,7 @@ export const groupedBiryanis =  {
       size: 'Large'
     },
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/mutton.jpeg'),
       popular: 'Popular in Non-Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Mutton Biryani',
@@ -66,7 +57,7 @@ export const groupedBiryanis =  {
       size: 'Large'
     },
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/prawn.jpeg'),
       popular: 'Popular in Non-Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Prawn Biryani',
@@ -75,16 +66,7 @@ export const groupedBiryanis =  {
       size: 'Regular'
     },
     {
-      bgImage: require('../assets/img/biryani.jpeg'),
-      popular: 'Popular in Non-Veg Biryani',
-      bestseller: 'BESTSELLER',
-      title: 'Fish Biryani',
-      description: 'Basmati rice and marinated fish pieces cooked with flavorful spices',
-      price: '₹380',
-      size: 'Regular'
-    },
-    {
-      bgImage: require('../assets/img/biryani.jpeg'),
+      bgImage: require('../assets/img/Biryani/chickenjpeg.jpeg'),
       popular: 'Popular in Non-Veg Biryani',
       bestseller: 'BESTSELLER',
       title: 'Egg Biryani',
