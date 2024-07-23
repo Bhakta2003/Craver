@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, FlatList, Image, Text, StyleSheet, Dimensions, Pressable } from 'react-native';
-import CardBeverages from './foodCards/cardBeverages';
+import CardBeverages from './foodCards/CardBeverages';
 import CardView from './CardView';
 
 const { width } = Dimensions.get('window');
@@ -41,14 +41,15 @@ const data = [
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGg8Qi99FDqVD6FuQTP2kHNC7bgKJ0b5VScA&s'
     },
 ];
-const DishesCategory = ({navigation}) => {
+const DishesCategory = ({ navigation }) => {
+    const categoryarray = ["Card", "CardBurger", "CardBiryani", "CardBeverages", "CardDesserts", "CardPaneer", "CardChicken"];
     const renderItem = ({ item }) => (
-        <View style={styles.itemContainer}>
-            <Pressable onPress={() => navigation.navigate(CardView)}>
+        <Pressable onPress={() => navigation.navigate(categoryarray[parseInt(item.id) - 1])}>
+            <View style={styles.itemContainer}>
                 <Image source={{ uri: item.url }} style={styles.image} />
                 <Text style={styles.text}>{item.name}</Text>
-            </Pressable>
-        </View>
+            </View>
+        </Pressable>
     );
     return (
         <FlatList
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     listContainer: {
         flexDirection: 'row',
         paddingVertical: 10,
-        paddingHorizontal:5,
+        paddingHorizontal: 5,
     },
     itemContainer: {
         alignItems: 'center',
@@ -77,22 +78,22 @@ const styles = StyleSheet.create({
         marginHorizontal: 8,
         width: 90,
         borderRadius: 15,
-        borderWidth:0.5,
-        borderColor:'grey',
-        paddingBottom:10,
-        paddingTop:10,
-        
+        borderWidth: 0.5,
+        borderColor: 'grey',
+        paddingBottom: 10,
+        paddingTop: 10,
+
     },
     image: {
         width: 80,
         height: 80,
-        borderRadius: 40, 
+        borderRadius: 40,
         marginBottom: 5,
     },
     text: {
         textAlign: 'center',
         fontSize: 14,
         color: 'black',
-        fontWeight:'500',
+        fontWeight: '500',
     },
 })

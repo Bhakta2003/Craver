@@ -14,7 +14,7 @@ import StackNavigator from './StackNavigator';
 // import {groupedPaneer} from './foodData/groupedPaneer';
 // import {groupedPizzas} from './foodData/groupedPizzas';
 // import Card from './components/foodCards/Card';
-import cardBeverages from './foodCards/cardBeverages';
+import cardBeverages from './foodCards/CardBeverages';
 // import CardBiryani from './components/foodCards/CardBiryani';
 // import cardBurger from './components/foodCards/cardBurger';
 // import cardChicken from './components/foodCards/cardChicken';
