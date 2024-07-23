@@ -15,13 +15,21 @@ import { useState,useEffect } from 'react';
 // import ConfirmOrder from './components/ConfirmOrder';
 import StackNavigator from './components/StackNavigator';
 import ProfileSettings from './components/ProfileSettings';
+// import CardView from './components/CardView';
+import Card from './components/foodCards/Card';
+import CardBurger from './components/foodCards/CardBurger';
+import CardBeverages from './components/foodCards/CardBeverages';
+import CardPaneer from './components/foodCards/CardPaneer';
+import CardDesserts from './components/foodCards/CardDesserts';
+import CardChicken from './components/foodCards/CardChicken'; 
+import CardBiryani from './components/foodCards/CardBiryani';
 
-import CardView from './components/CardView';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = ({navigation,route}) => {
+const TabNavigator = () => {
   return (
     <Tab.Navigator screenOptions={{
       headerShown: false,
@@ -106,7 +114,13 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={TabNavigator} />
         <Stack.Screen name="Profile" component={ProfileSettings} />
-        <Stack.Screen name="Beverages" component={CardView} />
+        <Stack.Screen name="Card" component={Card} options={{headerShown:true,}}/>
+        <Stack.Screen name="CardBurger" component={CardBurger} options={{headerShown:true,}}/>
+        <Stack.Screen name="CardBiryani" component={CardBiryani} options={{headerShown:true,}}/>
+        <Stack.Screen name="CardBeverages" component={CardBeverages} options={{headerShown:true,}}/>
+        <Stack.Screen name="CardChicken" component={CardChicken} options={{headerShown:true,}}/>
+        <Stack.Screen name="CardDesserts" component={CardDesserts}options={{headerShown:true,}}/>
+        <Stack.Screen name="CardPaneer" component={CardPaneer} options={{headerShown:true,}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
