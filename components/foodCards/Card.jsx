@@ -9,8 +9,9 @@ import {
   ScrollView,
   FlatList
 } from "react-native";
+import {groupedPizzas} from "../../foodData/groupedPizzas"
 
-const Card = ({ groupedPizzas }) => {
+const Card = () => {
   const [selectedCategory, setSelectedCategory] = useState("Veg Pizzas");
 
   const renderItem = ({ item }) => {

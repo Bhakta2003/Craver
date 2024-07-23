@@ -7,24 +7,23 @@ import {
   StyleSheet,
   SafeAreaView,
   ScrollView,
-  FlatList
+  FlatList,
+  StatusBar,
 } from "react-native";
-import { groupedBiryanis } from "../../foodData/groupedBiryanis";
+// import { groupedChicken } from "./groupedChicken";
+import { groupedBeverages } from "../../foodData/groupedBeverages";
 
-const CardBiryani = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Veg Biryanis");
+const CardBeverages = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Beverages");
+  const [numColumns, setNumColumns] = useState(1);
 
   const renderItem = ({ item }) => {
-    const { bgImage, popular, bestseller, title, description, price, size } = item;
+    const { bgImage, title, description, price, size } = item;
 
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.card}>
           <Image source={bgImage} style={styles.image} />
-          <View style={styles.info}>
-            {popular && <Text style={styles.popular}>{popular}</Text>}
-            {bestseller && <Text style={styles.bestseller}>{bestseller}</Text>}
-          </View>
           <View style={styles.details}>
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.description}>{description}</Text>
@@ -42,40 +41,23 @@ const CardBiryani = () => {
   return (
     <View style={{ flex: 1 }}>
       <Text style={styles.appName}>CRAVER</Text>
-      <View style={styles.tabContainer}>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => setSelectedCategory("Veg Biryanis")}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              selectedCategory === "Veg Biryanis" && styles.selectedTabText
-            ]}
-          >
-            Veg Biryani
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => setSelectedCategory("Non-Veg Biryanis")}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              selectedCategory === "Non-Veg Biryanis" && styles.selectedTabText
-            ]}
-          >
-            Non-Veg Biryani
-          </Text>
-        </TouchableOpacity>
-      </View>
+      <View style={styles.tabContainer}></View>
+      <TouchableOpacity
+        style={styles.toggleButton}
+        onPress={() => setNumColumns(numColumns === 1 ? 2 : 1)}
+      >
+        <Text style={styles.toggleButtonText}>
+          {numColumns === 1 ? "Show Two per Row" : "Show One per Row"}
+        </Text>
+      </TouchableOpacity>
       <ScrollView>
         <FlatList
-          data={groupedBiryanis[selectedCategory]}
+          data={groupedBeverages[selectedCategory]}
           renderItem={renderItem}
           keyExtractor={(item, index) => index.toString()}
           contentContainerStyle={styles.list}
+          numColumns={numColumns}
+          key={numColumns}
         />
       </ScrollView>
     </View>
@@ -86,6 +68,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginVertical: 10,
+    flexBasis: "49%",
+    margin: "0.5%",
+    paddingTop: StatusBar.currentHeight,
   },
   appName: {
     fontSize: 24,
@@ -102,10 +87,10 @@ const styles = StyleSheet.create({
     borderColor: "#ddd",
   },
   tabContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    justifyContent: "space-around",
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: "#ccc",
     marginBottom: 10,
   },
   tab: {
@@ -115,20 +100,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   selectedTabText: {
-    fontWeight: 'bold',
-    color: 'red',
+    fontWeight: "bold",
+    color: "red",
   },
   image: {
     width: "100%",
     height: 200,
-  },
-  info: {
-    position: "absolute",
-    top: 10,
-    left: 10,
-    right: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
   },
   popular: {
     backgroundColor: "#00cc44",
@@ -179,9 +156,34 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
+  toggleButton: {
+    backgroundColor: "",
+    padding: 10,
+    borderRadius: 5,
+    alignItems: "center",
+    margin: 10,
+  },
+  toggleButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    marginRight: 10,
+  },
   list: {
     paddingHorizontal: 20,
   },
+  toggleButton: {
+    backgroundColor: "#007BFF",
+    padding: 10,
+    borderRadius: 5,
+    alignItems: "center",
+    margin: 10,
+  },
+  toggleButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
 });
 
-export default CardBiryani;
+export default CardBeverages;

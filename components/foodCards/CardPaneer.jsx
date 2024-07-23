@@ -9,22 +9,19 @@ import {
   ScrollView,
   FlatList
 } from "react-native";
-import { groupedBiryanis } from "../../foodData/groupedBiryanis";
+import { groupedPaneer } from "../../foodData/groupedPaneer";
 
-const CardBiryani = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Veg Biryanis");
+const CardPaneer = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Paneer Dishes");
+  const [numColumns, setNumColumns] = useState(1);
 
   const renderItem = ({ item }) => {
-    const { bgImage, popular, bestseller, title, description, price, size } = item;
+    const { bgImage, title, description, price, size } = item;
 
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.card}>
           <Image source={bgImage} style={styles.image} />
-          <View style={styles.info}>
-            {popular && <Text style={styles.popular}>{popular}</Text>}
-            {bestseller && <Text style={styles.bestseller}>{bestseller}</Text>}
-          </View>
           <View style={styles.details}>
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.description}>{description}</Text>
@@ -43,39 +40,23 @@ const CardBiryani = () => {
     <View style={{ flex: 1 }}>
       <Text style={styles.appName}>CRAVER</Text>
       <View style={styles.tabContainer}>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => setSelectedCategory("Veg Biryanis")}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              selectedCategory === "Veg Biryanis" && styles.selectedTabText
-            ]}
-          >
-            Veg Biryani
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tab}
-          onPress={() => setSelectedCategory("Non-Veg Biryanis")}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              selectedCategory === "Non-Veg Biryanis" && styles.selectedTabText
-            ]}
-          >
-            Non-Veg Biryani
-          </Text>
-        </TouchableOpacity>
       </View>
+      <TouchableOpacity
+        style={styles.toggleButton}
+        onPress={() => setNumColumns(numColumns === 1 ? 2 : 1)}
+      >
+        <Text style={styles.toggleButtonText}>
+          {numColumns === 1 ? "Show Two per Row" : "Show One per Row"}
+        </Text>
+      </TouchableOpacity>
       <ScrollView>
         <FlatList
-          data={groupedBiryanis[selectedCategory]}
+          data={groupedPaneer[selectedCategory]}
           renderItem={renderItem}
           keyExtractor={(item, index) => index.toString()}
           contentContainerStyle={styles.list}
+          numColumns={numColumns}
+          key={numColumns}
         />
       </ScrollView>
     </View>
@@ -86,6 +67,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginVertical: 10,
+    flexBasis: '49%',
+    margin: '0.5%', 
+    
   },
   appName: {
     fontSize: 24,
@@ -100,6 +84,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderWidth: 1,
     borderColor: "#ddd",
+
   },
   tabContainer: {
     flexDirection: 'row',
@@ -121,14 +106,6 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 200,
-  },
-  info: {
-    position: "absolute",
-    top: 10,
-    left: 10,
-    right: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
   },
   popular: {
     backgroundColor: "#00cc44",
@@ -179,9 +156,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
+  toggleButton: {
+    backgroundColor: "#007BFF",
+    padding: 10,
+    borderRadius: 5,
+    alignItems: "center",
+    margin: 10,
+  },
+  toggleButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
   list: {
     paddingHorizontal: 20,
   },
 });
 
-export default CardBiryani;
+export default CardPaneer;
