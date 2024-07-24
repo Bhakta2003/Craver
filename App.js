@@ -11,7 +11,7 @@ import Menu from './components/Menu';
 import CartPage from './components/CartPage';
 import Feather from 'react-native-vector-icons/Feather';
 import Loader from './components/Loader';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import ConfirmOrder from './components/ConfirmOrder';
 import StackNavigator from './components/StackNavigator';
 import ProfileSettings from './components/ProfileSettings';
@@ -21,9 +21,8 @@ import CardBurger from './components/foodCards/CardBurger';
 import CardBeverages from './components/foodCards/CardBeverages';
 import CardPaneer from './components/foodCards/CardPaneer';
 import CardDesserts from './components/foodCards/CardDesserts';
-import CardChicken from './components/foodCards/CardChicken'; 
+import CardChicken from './components/foodCards/CardChicken';
 import CardBiryani from './components/foodCards/CardBiryani';
-
 
 
 const Stack = createStackNavigator();
@@ -57,7 +56,7 @@ const TabNavigator = () => {
             )
 
           }
-          
+
         }}
       />
       <Tab.Screen
@@ -114,13 +113,13 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={TabNavigator} />
         <Stack.Screen name="Profile" component={ProfileSettings} />
-        <Stack.Screen name="Card" component={Card} options={{headerShown:true,}}/>
-        <Stack.Screen name="CardBurger" component={CardBurger} options={{headerShown:true,}}/>
-        <Stack.Screen name="CardBiryani" component={CardBiryani} options={{headerShown:true,}}/>
-        <Stack.Screen name="CardBeverages" component={CardBeverages} options={{headerShown:true,}}/>
-        <Stack.Screen name="CardChicken" component={CardChicken} options={{headerShown:true,}}/>
-        <Stack.Screen name="CardDesserts" component={CardDesserts}options={{headerShown:true,}}/>
-        <Stack.Screen name="CardPaneer" component={CardPaneer} options={{headerShown:true,}}/>
+        <Stack.Screen name="Card" component={Card} options={{ headerShown: true, }} />
+        <Stack.Screen name="CardBurger" component={CardBurger} options={{ headerShown: true, }} />
+        <Stack.Screen name="CardBiryani" component={CardBiryani} options={{ headerShown: true, }} />
+        <Stack.Screen name="CardBeverages" component={CardBeverages} options={{ headerShown: true, }} />
+        <Stack.Screen name="CardChicken" component={CardChicken} options={{ headerShown: true, }} />
+        <Stack.Screen name="CardDesserts" component={CardDesserts} options={{ headerShown: true, }} />
+        <Stack.Screen name="CardPaneer" component={CardPaneer} options={{ headerShown: true, }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
