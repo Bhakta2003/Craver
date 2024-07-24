@@ -6,7 +6,7 @@ function ConfirmOrderCard(props) {
     return (
         <View style={styles.container}>
             <View style={styles.content1}>
-                <Image style={styles.cardImage} source={{ uri: props.image }}></Image>
+                <Image style={styles.cardImage} source={ props.image}></Image>
             </View>
             <View style={styles.content2}>
                 <Text style={styles.title}>{props.title}</Text>

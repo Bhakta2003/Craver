@@ -1,7 +1,7 @@
 export const BestSellerInfo = [
     {
         id:'1',
-        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuKGYbl4k6RC0JCx1R1ZeTxQVPgVahTu5M3w&s',
+        url: require('../assets/img/pizza/marg.jpeg'),
         title: 'Margherita',
         description: 'Classic delight with 100% real mozzarella cheese',
         price: '₹214',
@@ -9,7 +9,7 @@ export const BestSellerInfo = [
     },
     {
         id:'2',
-        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5sT5zC4y0-6mPucxnXLg4ATqCxjVN7bAttQ&s',
+        url: require('../assets/img/pizza/farmhouse.jpeg'),
         title: 'Veggie Supreme',
         description: 'Loaded with black olives, capsicum, onion, grilled mushroom, corn & tomato',
         price: '₹325',
@@ -17,7 +17,7 @@ export const BestSellerInfo = [
     },
     {
         id:'3',
-        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuKGYbl4k6RC0JCx1R1ZeTxQVPgVahTu5M3w&s',
+        url: require('../assets/img/burger/bacon.jpeg'),
         title: 'Chicken Dominator',
         description: 'Loaded with double pepper barbecue chicken, peri-peri chicken, chicken tikka & grilled chicken rashers',
         price: '₹499',
@@ -25,7 +25,7 @@ export const BestSellerInfo = [
       },
       {
         id:'4',
-        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuKGYbl4k6RC0JCx1R1ZeTxQVPgVahTu5M3w&s',
+        url: require('../assets/img/Chicken/tikka.jpeg'),
 
         title: 'Barbeque Chicken',
         description: 'Smoky BBQ chicken with extra cheese',

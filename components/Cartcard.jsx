@@ -24,7 +24,7 @@ function Cartcard({ onChange, title, about, image, quantity, price }) {
     return (
         <View style={styles.container}>
             <View style={styles.content1}>
-                <Image style={styles.cardImage} source={{ uri: image }}></Image>
+                <Image style={styles.cardImage} source={image}></Image>
             </View>
             <View style={styles.content2}>
                 <Text style={styles.title}>{title}</Text>

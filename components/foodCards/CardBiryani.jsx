@@ -30,7 +30,7 @@ const CardBiryani = () => {
             <Text style={styles.description}>{description}</Text>
             <Text style={styles.price}>{price}</Text>
             <Text style={styles.size}>{size}</Text>
-            <TouchableOpacity style={styles.addButton}>
+            <TouchableOpacity style={styles.addButton} onPress={()=>{addToCart({image:bgImage,title:title,about:size,price:parseInt(price.slice(1, price.length)),quantity:1})}}>
               <Text style={styles.addButtonText}>Add to Cart+</Text>
             </TouchableOpacity>
           </View>

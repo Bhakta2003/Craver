@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { addToCart } from '../CartOperations';
 
 const BestSellerCards = ({ item }) => {
     return (
         <View style={styles.container}>
-            <Image source={{ uri: item.url }} style={styles.image} />
+            <Image source={item.url} style={styles.image} />
             <View style={styles.info}>
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.description}>{item.description}</Text>
                 <Text style={styles.price}>{item.price}</Text>
                 <Text style={styles.size}>{item.size}</Text>
-                <TouchableOpacity style={styles.addButton}>
+                <TouchableOpacity style={styles.addButton} onPress={()=>{addToCart({image:item.url,title:item.title,about:item.size,price:parseInt(item.price.slice(1, item.price.length)),quantity:1})}}>
                     <Text style={styles.addButtonText}>Add to Cart</Text>
                 </TouchableOpacity>
             </View>
