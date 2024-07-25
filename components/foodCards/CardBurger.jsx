@@ -7,9 +7,11 @@ import {
   StyleSheet,
   SafeAreaView,
   ScrollView,
-  FlatList
+  FlatList,
+  StatusBar
 } from "react-native";
 import { groupedBurger } from "../../foodData/groupedBurger";
+import { addToCart } from "../../CartOperations";
 
 const CardBurger = () => {
   const [selectedCategory, setSelectedCategory] = useState("Burgers");
@@ -27,8 +29,8 @@ const CardBurger = () => {
             <Text style={styles.description}>{description}</Text>
             <Text style={styles.price}>{price}</Text>
             <Text style={styles.size}>{size}</Text>
-            <TouchableOpacity style={styles.addButton} onPress={()=>{addToCart({image:bgImage,title:title,about:size,price:parseInt(price.slice(1, price.length)),quantity:1})}}>
-              <Text style={styles.addButtonText}>Add to Cart+</Text>
+            <TouchableOpacity style={styles.addButton} onPress={() => { addToCart({ image: bgImage, title: title, about: size, price: parseInt(price.slice(1, price.length)), quantity: 1 }) }}>
+              <Text style={styles.addButtonText}>Add to Cart</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -68,8 +70,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginVertical: 10,
     flexBasis: '49%',
-    margin: '0.5%', 
-    
+    margin: '0.5%',
+    paddingTop: StatusBar.currentHeight,
   },
   appName: {
     fontSize: 24,
@@ -77,12 +79,13 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingTop: 10,
     color: "green",
+    marginTop:30,
   },
   card: {
     borderRadius: 10,
     overflow: "hidden",
     marginBottom: 20,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: "#ddd",
 
   },
@@ -142,11 +145,12 @@ const styles = StyleSheet.create({
   },
   size: {
     fontSize: 14,
-    color: "#777",
+    color: '#187bcd',
     marginVertical: 5,
+    fontWeight: 'bold',
   },
   addButton: {
-    backgroundColor: "#ff4444",
+    backgroundColor: "#009966",
     padding: 10,
     borderRadius: 5,
     alignItems: "center",

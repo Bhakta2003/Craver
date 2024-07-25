@@ -39,7 +39,7 @@ function CartPage({ navigation, route }) {
                     {(items.length == 0) ? <Text style={{ marginLeft: 25, fontWeight: "300" }}>No Data Found</Text> : <></>}
                 </SafeAreaView>
                 <SafeAreaView style={styles.headContainer}>
-                    <Text style={styles.heading}>Price Details</Text>
+                    <Text style={styles.priceHeading}>Price Details</Text>
                 </SafeAreaView>
                 {(items.length != 0) ? <SafeAreaView style={styles.pricesHeading}>
                     <Text style={styles.pricesHeadingText}>Items</Text>
@@ -57,11 +57,11 @@ function CartPage({ navigation, route }) {
             <View style={styles.bottomFixed}>
                 <View>
                     <Text style={styles.small}>Grand Total</Text>
-                    <Text style={styles.medium}><Image style={{ width: 20, height: 20 }} source={{ uri: "https://cdn-icons-png.flaticon.com/128/25/25473.png" }}></Image>{totalprice}</Text>
+                    <Text style={styles.medium}><Image style={{ width: 20, height: 20, }} source={{ uri: "https://cdn-icons-png.flaticon.com/128/25/25473.png" }}></Image>{totalprice}</Text>
                 </View>
                 <View>
                     {(items.length == 0) ? <Button disabled title="Place Order" ></Button> :
-                        <Button title="Place Order" onPress={() => { navigation.navigate("ConfirmOrder") }} color={"purple"} ></Button>}
+                        <Button title="Place Order" onPress={() => { navigation.navigate("ConfirmOrder") }} color={"orange"} ></Button>}
                 </View>
             </View>
         </View>
@@ -83,25 +83,29 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         position: "absolute",
-        width: "100%",
+        width: "95%",
         height: 70,
         padding: 15,
-        backgroundColor: "#F5BCBA",
-        bottom: 60,
+        backgroundColor: "#009966",
+        bottom: 85,
+        marginHorizontal:9,
+        borderRadius:15,
     },
     small: {
         fontSize: 12,
         fontWeight: "100",
-        color: ""
+        color: "white",
     },
     medium: {
         fontSize: 20,
         fontWeight: "200",
+        color: "white",
     },
     productsContainer: {
         minHeight: "auto",
         width: "100%",
         flexDirection: "column",
+        
     },
     headContainer: {
         width: "100%",
@@ -110,6 +114,11 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     heading: {
+        paddingLeft: 20,
+        fontSize: 30,
+        fontWeight: "bold"
+    },
+    priceHeading: {
         paddingLeft: 20,
         fontSize: 20,
         fontWeight: "bold"
@@ -130,6 +139,7 @@ const styles = StyleSheet.create({
     pricesHeadingText: {
         fontSize: 15,
         fontWeight: "600",
+        // marginBottom:20,
     },
     bottom: {
         width: "100%",
@@ -137,6 +147,7 @@ const styles = StyleSheet.create({
         alignItems: "flex-end",
         padding: 10,
         marginRight: 30,
+        marginBottom:150,
     },
     line: {
         backgroundColor: "black",

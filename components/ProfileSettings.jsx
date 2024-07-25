@@ -22,7 +22,7 @@ const ProfileSettings = () => {
             color: 'white'
           },
           headerStyle: {
-            backgroundColor: 'orange',
+            backgroundColor: '#009966',
           }
         }}
       />
@@ -36,7 +36,7 @@ const ProfileSettings = () => {
             color: 'white'
           },
           headerStyle: {
-            backgroundColor: 'orange',
+            backgroundColor: '#009966',
           }
         }}
       />

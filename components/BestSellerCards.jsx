@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
     },
     size: {
         fontSize: 14,
-        color: '#187bcd',
+        color: '#1686fa',
         marginVertical: 5,
         fontWeight:'bold',
     },
     addButton: {
-        backgroundColor: '#25d366',
+        backgroundColor: '#009966',
         padding: 10,
         borderRadius: 5,
         alignItems: 'center',

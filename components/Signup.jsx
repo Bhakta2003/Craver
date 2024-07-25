@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Animated,
   Dimensions,
+  StatusBar,
 } from 'react-native';
 import ReusableTextInput from '../components/ReusableTextInput';
 import ReusableButton from '../components/ReusableButton';
@@ -67,12 +68,14 @@ const Signup = ({ navigation }) => {
             value={email}
             onChangeText={setEmail}
             placeholder="Email"
+            placeholderTextColor={'white'}
             style={styles.input}
           />
           <ReusableTextInput
             value={password}
             onChangeText={setPassword}
             placeholder="Create Password"
+            placeholderTextColor={'white'}
             style={styles.input}
             secureTextEntry
           />
@@ -80,13 +83,14 @@ const Signup = ({ navigation }) => {
             value={confirmPassword}
             onChangeText={setConfirmPassword}
             placeholder="Confirm Password"
+            placeholderTextColor={'white'}
             style={styles.input}
             secureTextEntry
           />
           <ReusableButton title="Sign Up" onPress={() => navigation.navigate('Home')} style={styles.button} />
         </Animated.View>
         <Animated.View style={[styles.signInContainer, { opacity: signInOpacity }]}>
-          <Text>Already have an account?</Text>
+          <Text style={{color:'orange',}}>Already have an account?</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={styles.signInText}>Login</Text>
           </TouchableOpacity>
@@ -99,11 +103,12 @@ const Signup = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    paddingTop:StatusBar.currentHeight,
   },
   topSection: {
     height: height * 0.3,
-    backgroundColor: '#ffffff', // Adjust the color as needed
+    backgroundColor: '#ffffff', 
     justifyContent: 'center',
     alignItems: 'center',
     borderBottomLeftRadius: 40,
@@ -112,21 +117,22 @@ const styles = StyleSheet.create({
   bottomSection: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#65c6bb', // Change the color as needed
+    backgroundColor: '#009966', 
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
   },
   header: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 15,
     textAlign: 'center',
+    color:'white',
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#191970',
+    borderWidth: 2,
+    borderColor: 'white',
     borderRadius: 30,
     padding: 12,
     marginBottom: 15,
@@ -147,7 +153,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   signInText: {
-    color: 'blue',
+    color: 'white',
     marginLeft: 5,
     textDecorationLine: 'underline',
   },

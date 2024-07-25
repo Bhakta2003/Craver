@@ -61,18 +61,18 @@ const ProfileScreen = ({ navigation, route }) => {
 
       <View style={styles.details}>
         <View style={styles.detailItem}>
-          <Icon name="call-outline" size={24} color="orange" style={styles.detailIcon} />
-          <Text style={styles.detailTitle}>Phone:</Text>
-          <Text style={styles.detailText}>{phone || '+65 29879 363'}</Text>
+          <Icon name="call-outline" size={24} color="#009966" style={styles.detailIcon} />
+          {/* <Text style={styles.detailTitle}>Phone:</Text> */}
+          <Text style={styles.detailText}>{phone || '+91 8371537261'}</Text>
         </View>
         <View style={styles.detailItem}>
-          <Icon name="mail-outline" size={24} color="orange" style={styles.detailIcon} />
-          <Text style={styles.detailTitle}>Email:</Text>
+          <Icon name="mail-outline" size={24} color="#009966" style={styles.detailIcon} />
+          {/* <Text style={styles.detailTitle}>Email:</Text> */}
           <Text style={styles.detailText}>{email || 'gadaelectronics@gmail.com'}</Text>
         </View>
         <View style={styles.detailItem}>
-          <Icon name="home-outline" size={24} color="orange" style={styles.detailIcon} />
-          <Text style={styles.detailTitle}>Address:</Text>
+          <Icon name="home-outline" size={24} color="#009966" style={styles.detailIcon} />
+          {/* <Text style={styles.detailTitle}>Address:</Text> */}
           <Text style={styles.detailText}>{address || '123 Main st. Mumbai'}</Text>
         </View>
       </View>
@@ -109,28 +109,29 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   profileBox: {
-    width: screenWidth - 32, // Same width as the container minus padding
+    width: screenWidth - 32, 
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFA500',
+    backgroundColor: '#009966',
     padding: 10,
     borderRadius: 10,
     marginBottom: 20,
   },
   profileImage: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     borderRadius: 50,
     marginRight: 20,
     marginLeft: 0,
+    marginVertical:10,
   },
   name: {
-    fontSize: 34,
+    fontSize: 30,
     fontWeight: 'bold',
     color: 'white',
   },
   editButton: {
-    marginLeft: 10,
+    marginLeft: 60,
   },
   details: {
     marginTop: 20,
@@ -152,11 +153,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
 
   },
-  detailTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginRight: 5,
-  },
+  // detailTitle: {
+  //   fontSize: 18,
+  //   fontWeight: 'bold',
+  //   marginRight: 5,
+  // },
   detailText: {
     fontSize: 18,
   },

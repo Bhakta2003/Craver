@@ -13,12 +13,12 @@ import { BestSellerInfo } from './BestSellerInfo';
 
 
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
     return (
-        
+
         <ScrollView style={styles.container}>
             <View style={styles.header}>
-                <Octicons name='location' size={24} color='#25d366' />
+                <Octicons name='location' size={24} color='#009966' />
                 <View style={styles.headerText}>
                     <Text style={styles.deliverTo}>Deliver To</Text>
                     <Text style={styles.Address}>Silicon University, Bbsr</Text>
@@ -31,11 +31,15 @@ const Home = ({navigation}) => {
                 <TextInput placeholder='Search for Food' />
                 <Octicons name='search' size={24} color="#25d366" />
             </View>
-            <ImgSlid/>
-            <TopCategory/>
-            <Text style={{textAlign:'center',marginTop:15,letterSpacing:6,marginBottom:5,color:'gray'}}>EXPLORE</Text>
-            <DishesCategory navigation={navigation}/>
-            <Text style={{textAlign:'center',marginTop:7,letterSpacing:6,marginBottom:13,color:'gray'}}>OUR BESTSELLERS</Text>
+            <ImgSlid />
+            <TopCategory />
+            <View style={{flexDirection: 'column',alignItems: 'center',justifyContent: 'center',flex: 1,}}>
+                <View style={{height: 0.3,backgroundColor: 'gray',width: '80%',marginVertical: 10,}}></View>
+                <Text style={{ marginVertical:1, letterSpacing: 6, color: 'gray' }}>EXPLORE</Text>
+                <View style={{height: 0.5,backgroundColor: 'gray',width: '80%',marginVertical: 10,}}></View>
+            </View>
+            <DishesCategory navigation={navigation} />
+            <Text style={{ textAlign: 'center', marginTop: 7, letterSpacing: 6, marginBottom: 13, color: 'gray' }}>OUR BESTSELLERS</Text>
             {BestSellerInfo.map(item => (
                 <BestSellerCards key={item.id} item={item} />
             ))}
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        marginRight:4,
+        marginRight: 4,
     },
     header: {
         flexDirection: 'row',

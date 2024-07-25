@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Animated,
   Dimensions,
+  StatusBar
 } from 'react-native';
 import LottieView from 'lottie-react-native';
 
@@ -40,15 +41,13 @@ const LoginScreen = ({ navigation }) => {
     ]).start();
   }, []);
 
-  // const handleLogin = () => {
-  //   // Handle login logic
-  // };
+  
 
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
         <LottieView
-          source={require('../assets/delivery1.json')} // Ensure this path is correct
+          source={require('../assets/delivery1.json')} 
           autoPlay
           loop
           style={styles.animation}
@@ -65,12 +64,14 @@ const LoginScreen = ({ navigation }) => {
             placeholder="Username"
             value={username}
             onChangeText={setUsername}
+            placeholderTextColor={'white'}
           />
           <TextInput
             style={styles.input}
             placeholder="Password"
             value={password}
             onChangeText={setPassword}
+            placeholderTextColor={'white'}
             secureTextEntry
           />
           <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate('Home')}>
@@ -78,7 +79,7 @@ const LoginScreen = ({ navigation }) => {
           </TouchableOpacity>
         </Animated.View>
         <Animated.View style={[styles.signUpContainer, { opacity: signUpOpacity }]}>
-          <Text>Don't have an account?</Text>
+          <Text style={{color:'orange'}}>Don't have an account?</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
             <Text style={styles.signUpText}>Sign Up</Text>
           </TouchableOpacity>
@@ -91,7 +92,8 @@ const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    paddingTop:StatusBar.currentHeight,
   },
   topSection: {
     height: height * 0.3,
@@ -104,22 +106,23 @@ const styles = StyleSheet.create({
   bottomSection: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#65c6bb', // Change the color as needed
+    backgroundColor: '#009966', 
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
   },
   header: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 15,
     textAlign: 'center',
+    color:'white',
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#191970',
-    borderRadius: 30,
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 15,
     padding: 12,
     marginBottom: 15,
     paddingLeft: 40,
@@ -134,8 +137,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   signInButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
+    color: 'white',
+    fontSize: 19,
     fontWeight: 'bold',
   },
   signUpContainer: {
@@ -143,12 +146,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   signUpText: {
-    color: 'blue',
+    color: 'white',
     marginLeft: 5,
     textDecorationLine: 'underline',
   },
   animation: {
-    width: width * 0.9, // Adjust the size as needed
+    width: width * 0.9, 
     height: height * 0.4,
   },
 });

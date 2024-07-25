@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, ImageBackground, Pressable, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Animated, ImageBackground, Pressable, Dimensions ,StatusBar} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
 
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
+    paddingTop:StatusBar.currentHeight,
   },
   overlay: {
     flex: 1,
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   roundButton: {
-    backgroundColor: '#fe9600',
+    backgroundColor: '#009966',
     width: 175,
     height: 40,
     borderRadius: 30,
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
   },
   topSection: {
     height: height * 0.4,
-    backgroundColor: '#ffffff', // Adjust the color as needed
+    backgroundColor: '#ffffff', 
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
@@ -160,8 +161,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   animation: {
-    width: width * 0.8, // Adjust the size as needed
-    height: height * 0.4, // Adjust the size as needed
+    width: width * 0.8, 
+    height: height * 0.4, 
   },
   background: {
     flex: 1,

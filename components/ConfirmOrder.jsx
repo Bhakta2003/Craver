@@ -4,6 +4,7 @@ import ConfirmOrderCard from "./ConfirmOrderCard";
 import { profile } from "../Profile";
 import PriceCard from "./PriceCard";
 import { useState } from "react";
+import PaymentMethodSelection from "./PaymentMethodSelection";
 
 
 function ConfirmOrder({ navigation, route }) {
@@ -52,9 +53,9 @@ function ConfirmOrder({ navigation, route }) {
                     <TextInput style={styles.input} placeholder="Phone" >{"+91 " + profile.phone}</TextInput>
                 </View>
                 <View style={styles.button}>
-                    <Button title="Confirm Order" onPress={() => { setDisplay("flex") }} color={"purple"}  ></Button>
+                    <Button title="Confirm Order" onPress={() => { navigation.navigate(PaymentMethodSelection) }} color={"orange"}  ></Button>
                 </View>
-                <View style={[styles.sucessMessage, { display: display }]}>
+                {/* <View style={[styles.sucessMessage, { display: display }]}>
                     <View style={styles.box}>
                         <Image width={90} height={90} source={{ uri: "https://cdn2.iconfinder.com/data/icons/user-interface-vol-2-21/64/Thank_You-1024.png" }}></Image>
                         <Text style={styles.orderPlaced}>Your Order is Placed</Text>
@@ -65,7 +66,7 @@ function ConfirmOrder({ navigation, route }) {
                             navigation.navigate("Home")
                         }} color={"#192A56"}></Button></View>
                     </View>
-                </View>
+                </View> */}
             </ScrollView>
         </View>
     )
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 5,
         padding: 9,
-        elevation: 2,
+        elevation: 0,
     },
     infoContainer: {
         gap: 5,
@@ -119,7 +120,8 @@ const styles = StyleSheet.create({
         width: "100%",
         padding: 10,
         marginTop: 10,
-        paddingBottom:80,
+        paddingBottom:100,
+
     },
     productsContainer: {
         minHeight: "auto",

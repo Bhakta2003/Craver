@@ -29,7 +29,7 @@ function Cartcard({ onChange, title, about, image, quantity, price }) {
             <View style={styles.content2}>
                 <Text style={styles.title}>{title}</Text>
                 <Text style={styles.subtitle}>{about}</Text>
-                <Text style={styles.subtitle}><Image style={{ width: 12, height: 12 }} source={{ uri: "https://cdn-icons-png.flaticon.com/128/25/25473.png" }}></Image>{price}</Text>
+                <Text style={styles.price}><Image style={{ width: 12, height: 12 }} source={{ uri: "https://cdn-icons-png.flaticon.com/128/25/25473.png" }}></Image>{price}</Text>
             </View>
             <View style={styles.content3}>
                 <View>
@@ -53,13 +53,14 @@ const styles = StyleSheet.create({
         width: "96%",
         minHeight: 100,
         borderColor: "#7B8788",
-        borderWidth: 2,
+        borderWidth: 1,
         borderRadius: 9,
         flexDirection: "row",
         alignItems: "center",
         gap: 5,
-        elevation:2,
-        margin:3
+        elevation:0,
+        margin:3,
+        backgroundColor:'white',
     },
     content1: {
         flex: 1,
@@ -89,13 +90,13 @@ const styles = StyleSheet.create({
         width: 25,
         borderColor: "#7B8788",
         borderWidth: 2,
-        borderRadius: 2,
+        borderRadius: 12.5,
         padding: 2,
-        fontWeight: "400",
+        fontWeight: "200",
         textAlign: "center",
         fontSize: 16,
-        margin: 1,
-
+        margin: 3,
+        
     },
     title: {
         fontSize: 20,
@@ -103,13 +104,18 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 15,
-        fontWeight: "200"
+        fontWeight: "200",
+        color:'#1686fa',
     },
     remove: {
         width: 22,
         height: 22,
 
-    }
+    },
+    price:{
+        color:'black',
+        fontWeight:'bold',
+    },
 });
 
 export default Cartcard;

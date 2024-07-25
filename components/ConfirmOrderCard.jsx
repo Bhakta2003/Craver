@@ -6,11 +6,11 @@ function ConfirmOrderCard(props) {
     return (
         <View style={styles.container}>
             <View style={styles.content1}>
-                <Image style={styles.cardImage} source={ props.image}></Image>
+                <Image style={styles.cardImage} source={props.image}></Image>
             </View>
             <View style={styles.content2}>
                 <Text style={styles.title}>{props.title}</Text>
-                <Text>{props.about}</Text>
+                <Text style={{color:'#1686fa',}}>{props.about}</Text>
             </View>
             <View style={styles.content3}>
                 <Text>Price:<Image style={{ width: 12, height: 12 }} source={{ uri: "https://cdn-icons-png.flaticon.com/128/25/25473.png" }}></Image>{props.price}</Text>
@@ -30,7 +30,8 @@ const styles = StyleSheet.create(
             flexDirection: "row",
             alignItems: "center",
             gap: 5,
-            elevation:2
+            elevation: 0,
+            
         },
         content1: {
             flex: 0.9,
@@ -38,7 +39,7 @@ const styles = StyleSheet.create(
             padding: 7,
         },
         cardImage: {
-            borderRadius:35,
+            borderRadius: 35,
             height: 70,
             width: 70,
         },
@@ -52,9 +53,9 @@ const styles = StyleSheet.create(
             flexDirection: "column",
             gap: 3,
         },
-        title:{
-            fontWeight:"700",
-            fontSize:17,
+        title: {
+            fontWeight: "700",
+            fontSize: 17,
         }
     }
 );

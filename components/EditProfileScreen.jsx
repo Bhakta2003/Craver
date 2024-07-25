@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet ,ScrollView} from 'react-native';
 import { launchImageLibrary } from 'react-native-image-picker';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -44,7 +44,7 @@ const EditProfileScreen = ({ navigation, route }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity style={styles.doneButton} onPress={handleDone}>
           <Text style={styles.doneButtonText}>Done</Text>
@@ -84,7 +84,7 @@ const EditProfileScreen = ({ navigation, route }) => {
           {errors.address && <Text style={styles.errorText}>{errors.address}</Text>}
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    marginBottom:30,
   },
   header: {
     flexDirection: 'row',
@@ -113,17 +114,18 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   profileImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
     borderWidth: 2,
-    borderColor: '#FFA500',
+    borderColor: 'grey',
+    marginBottom:10,
   },
   profileButton: {
     bottom: 0,
     right: 0,
     backgroundColor: '#FFA500',
-    borderRadius: 15,
+    borderRadius: 7,
     padding: 10,
 
   },
